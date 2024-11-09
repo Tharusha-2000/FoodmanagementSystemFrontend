@@ -6,6 +6,7 @@ import { HashLink } from 'react-router-hash-link';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const NavbarContainer = styled.div`
+background: rgba(237, 255, 218, 0.2);
   width: 100%;
   max-width: 1200px;
   padding: 0 24px;
@@ -170,27 +171,26 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <NavItems isOpen={isNavOpen}>
+        <StyledLink smooth to="#home" onClick={() => setIsNavOpen(false)}>Home</StyledLink>
+        <StyledLink smooth to="#menu" onClick={() => setIsNavOpen(false)}>Menu</StyledLink>
         <StyledLink smooth to="#about" onClick={() => setIsNavOpen(false)}>About</StyledLink>
-        <StyledLink smooth to="#skills" onClick={() => setIsNavOpen(false)}>Skills</StyledLink>
-        <StyledLink smooth to="#experience" onClick={() => setIsNavOpen(false)}>Experience</StyledLink>
-        <StyledLink smooth to="#projects" onClick={() => setIsNavOpen(false)}>Projects</StyledLink>
         
         {/* Education with Dropdown */}
         <StyledLink 
           smooth
-          to="#education"
+          to="#recipes"
           onClick={() => {
             toggleDropdown();
             setIsNavOpen(false);
           }}
           className={isDropdownOpen ? 'active' : ''}
         >
-          Education
+           Recipes
           <ArrowDropDownIcon style={{ marginLeft: '4px' }} />
           <DropdownMenu isOpen={isDropdownOpen}>
-            <DropdownItem to="#bachelor">Bachelor's Degree</DropdownItem>
-            <DropdownItem to="#highschool">High School</DropdownItem>
-            <DropdownItem to="#courses">Online Courses</DropdownItem>
+            <DropdownItem to="#one">1</DropdownItem>
+            <DropdownItem to="#two">2</DropdownItem>
+            <DropdownItem to="#three">3</DropdownItem>
           </DropdownMenu>
         </StyledLink>
       </NavItems>
@@ -200,7 +200,7 @@ const Navbar = () => {
       </NavLogo>
 
       <ButtonContainer>
-        <ContactButton to="/contact">
+        <ContactButton >
           Contact
         </ContactButton>
         <NotificationIcon />

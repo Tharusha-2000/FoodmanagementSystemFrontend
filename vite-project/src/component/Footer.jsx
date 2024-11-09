@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FooterContainer = styled.footer`
+const FooterContainer = styled.div`
+  
   width: 100%;
   max-width: 1200px; /* Optional: You can set a maximum width if needed */
   margin: 0 auto;
